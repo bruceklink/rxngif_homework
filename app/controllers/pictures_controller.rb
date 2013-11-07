@@ -1,7 +1,9 @@
 class PicturesController < ApplicationController
   def show
-  	@id = params[:id]
+  	@picture = Picture.find_by(params[:id])
+  end
 
-  	@p = Picture.find_by(params[:id])
+  def index
+  	@list_of_pictures = Picture.all  	
   end
 end
